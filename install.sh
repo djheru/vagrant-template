@@ -35,7 +35,7 @@ sudo a2enmod rewrite
 
 echo "--- Setting document root ---"
 sudo rm -rf /var/www
-sudo ln -fs /vagrant/public /var/www
+sudo ln -fs /vagrant/app /var/www
 
 
 echo "--- What developer codes without errors turned on? Not you, bro. ---"
