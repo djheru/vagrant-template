@@ -34,14 +34,13 @@ echo "--- Enabling mod-rewrite ---"
 sudo a2enmod rewrite
 
 echo "--- Setting document root ---"
-sudo rm -rf /var/www
-sudo ln -fs /vagrant/app /var/www
+
+sudo ln -fs /vagrant/app /var/www/html
 
 
 echo "--- What developer codes without errors turned on? Not you, bro. ---"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
 sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/apache2/php.ini
-
 sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 echo "--- Restarting Apache ---"
@@ -82,6 +81,5 @@ echo "--- Installing Mongodb ---"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 > /dev/null
 sudo sh -c 'echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" | sudo tee /etc/apt/sources.list.d/mongodb.list' > /dev/null
 sudo apt-get install mongodb-server -y
-
 
 echo "--- All set to go! Would you like to play a game? ---"
