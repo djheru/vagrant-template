@@ -6,8 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #step 2, you put your dist in the box
-    config.vm.box = "precise32"
-    config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+    config.vm.box = "ubuntu/trusty32"
 
     # Create a private network, which allows host-only access to the machine using a specific IP.
     config.vm.network :private_network, ip: "192.168.56.2"
@@ -18,7 +17,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.network :forwarded_port, guest: 3001, host: 3001
 
 	#apt-get ALL the things
-    config.vm.provision :shell, :path => "install.sh"
+    config.vm.provision :shell, :path => "provision/base.sh"
+    config.vm.provision :shell, :path => "provision/lamp.sh"
+    config.vm.provision :shell, :path => "provision/python.sh"
+    config.vm.provision :shell, :path => "provision/ruby.sh"
+    config.vm.provision :shell, :path => "provision/node.sh"
 
     # If true, then any SSH connections made will enable agent forwarding.
     # Default value: false

@@ -1,5 +1,6 @@
 # Quick Vagrant Setup
-This is a vagrant shortcut to set up a Ubuntu Raring x64 box with LAMP and Postgresql.
+This is a vagrant shortcut to set up a Ubuntu Trusty x32 box with development stuffs for LAMP, Python, Ruby and Node.
+Also includes MySQL, MongoDb and Redis. 
 
 ### Install Oracle VirtualBox
 
@@ -23,6 +24,11 @@ Download Here: [http://downloads.vagrantup.com/] (http://downloads.vagrantup.com
 ### Clone this project
 
 	git clone https://github.com/djheru/vagrant-template.git ./project_name
+
+### Customize the provisioning
+
+This includes bash scripts to install stuff for LAMP, Python (with virtualenv), Ruby and node.js. 
+If you don't need one, just comment that line out in the Vagrantfile
 	
 ### Start the box (building if needed)
 
@@ -54,6 +60,9 @@ Download Here: [http://downloads.vagrantup.com/] (http://downloads.vagrantup.com
 ### Destroy the box
 
 	vagrant destroy
+	
+### List all running boxes
+    VBoxManage list runningvms
 	
 ## Vagrant Docs
 View Here: [http://docs.vagrantup.com/v2/getting-started/index.html] (http://docs.vagrantup.com/v2/getting-started/index.html)
