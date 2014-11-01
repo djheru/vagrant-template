@@ -15,7 +15,7 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password passwor
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 sudo apt-get install -y mysql-server-5.5
 
-cho "--- Installing Redis ---"
+echo "--- Installing Redis ---"
 sudo apt-get install -y redis-server
 
 echo "--- Installing Mongodb ---"

@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
-echo "--- Installing node.js ---"
+echo "--- Installing node.js via nvm ---"
 sudo apt-get update
-sudo apt-get install -y  python g++ make
-sudo add-apt-repository -y ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install -y  nodejs
-sudo npm install -g express-generator
-sudo npm install -g nodemon
+sudo su vagrant -c "wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh"
+source /home/vagrant/.nvm/nvm.sh
+source /home/vagrant/.bashrc
+nvm install 0.10
+nvm alias default 0.10
+nvm use default
+
+echo "-- Installing some useful global packages --"
+npm install -g express-generator
+npm install -g nodemon
+npm install -g grunt-cli
