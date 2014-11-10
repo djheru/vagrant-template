@@ -25,4 +25,4 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 
 echo "--- Installing Postgres ---"
-sudo apt-get install postgresql-9.3
+sudo apt-get install -y postgresql-9.3
