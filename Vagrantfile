@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network :forwarded_port, guest: 80, host: 8080
 	config.vm.network :forwarded_port, guest: 3000, host: 3000
 	config.vm.network :forwarded_port, guest: 3001, host: 3001
+	config.vm.network :forwarded_port, guest: 9000, host: 9000
 
 	#apt-get ALL the things
     config.vm.provision :shell, :path => "provision/base.sh"
