@@ -3,7 +3,7 @@
 echo "--- Installing Apache and PHP ---"
 sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
-sudo apt-get install -y php5 apache2 libapache2-mod-php5
+sudo apt-get install -y php5 apache2 libapache2-mod-php5 php-sqlite
 sudo apt-get install -y php5-gd php5-mcrypt php5-mysql php5-curl
 
 echo "--- Installing and configuring Xdebug ---"
