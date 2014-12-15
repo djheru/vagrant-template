@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# SSH into a Vagrant VM, forwarding ports in a way that allows node within Vagrant to be debugged by a debugger
+# or IDE in the host operating system. Don't know why, but Vagrantfile port forwarding does not work because
+# it won't let you bind to a forwarded port.
+
+vagrant ssh-config > ~/vagrant-ssh.config
+ssh -F ~/vagrant-ssh.config -L 5858:127.0.0.1:5858 default
+rm ~/vagrant-ssh.config
+
