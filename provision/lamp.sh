@@ -7,7 +7,7 @@ sudo apt-get install -y --force-yes php5 apache2 libapache2-mod-php5 php-sqlite
 sudo apt-get install -y --force-yes php5-gd php5-mcrypt php5-mysql php5-curl
 
 echo "--- Installing and configuring Xdebug ---"
-sudo apt-get install -y --force-debug php5-xdebug
+sudo apt-get install -y --force-yes php5-xdebug
 
 cat << EOF | sudo tee -a /etc/php5/mods-available/xdebug.ini
 xdebug.scream=1
