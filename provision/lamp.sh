@@ -3,16 +3,22 @@
 echo "--- Installing Apache and PHP ---"
 sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
-sudo apt-get install -y php5 apache2 libapache2-mod-php5 php-sqlite
-sudo apt-get install -y php5-gd php5-mcrypt php5-mysql php5-curl
+sudo apt-get install -y --force-yes php5 apache2 libapache2-mod-php5 php-sqlite
+sudo apt-get install -y --force-yes php5-gd php5-mcrypt php5-mysql php5-curl
 
 echo "--- Installing and configuring Xdebug ---"
-sudo apt-get install -y php5-xdebug
+sudo apt-get install -y --force-debug php5-xdebug
 
 cat << EOF | sudo tee -a /etc/php5/mods-available/xdebug.ini
 xdebug.scream=1
 xdebug.cli_color=1
 xdebug.show_local_vars=1
+xdebug.idekey="debugit"  
+xdebug.remote_host=10.0.2.2  
+xdebug.remote_port=10000  
+xdebug.remote_enable=1  
+xdebug.remote_autostart=0  
+xdebug.remote_handler="dbgp"  
 EOF
 
 echo "--- Enabling mod-rewrite ---"

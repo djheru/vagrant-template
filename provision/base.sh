@@ -35,4 +35,7 @@ echo "-- Installing RabbitMQ --"
 echo "deb http://www.rabbitmq.com/debian/ testing main" | sudo tee -a /etc/apt/sources.list.d/rabbitmq.list
 curl -L -o ~/rabbitmq-signing-key-public.asc http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 sudo apt-key add ~/rabbitmq-signing-key-public.asc
-sudo apt-get update && sudo apt-get install -y rabbitmq-server erlang-nox
+sudo apt-get update && sudo apt-get install -y --force-yes rabbitmq-server erlang-nox
+
+echo "-- Installing Postfix --"
+sudo apt-get install -y --force-yes postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
