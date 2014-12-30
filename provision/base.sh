@@ -37,5 +37,8 @@ curl -L -o ~/rabbitmq-signing-key-public.asc http://www.rabbitmq.com/rabbitmq-si
 sudo apt-key add ~/rabbitmq-signing-key-public.asc
 sudo apt-get update && sudo apt-get install -y --force-yes rabbitmq-server erlang-nox
 
+echo "-- Installing SQLite --"
+sudo apt-get install -y --force-yes sqlite3 libsqlite3-dev
+
 echo "-- Installing Postfix --"
 sudo apt-get install -y --force-yes postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
