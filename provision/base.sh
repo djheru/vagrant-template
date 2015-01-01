@@ -2,6 +2,7 @@
 
 echo "--- Updating packages list ---"
 sudo apt-get update
+sudo apt-get -f install
 
 echo "--- Installing sqlite ---"
 sudo apt-get install sqlite3 libsqlite3-dev
@@ -39,6 +40,4 @@ sudo apt-get update && sudo apt-get install -y --force-yes rabbitmq-server erlan
 
 echo "-- Installing SQLite --"
 sudo apt-get install -y --force-yes sqlite3 libsqlite3-dev
-
-echo "-- Installing Postfix --"
-sudo apt-get install -y --force-yes postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
+sudo apt-get -f install
