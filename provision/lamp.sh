@@ -3,8 +3,11 @@
 echo "--- Installing Apache and PHP ---"
 sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
-sudo apt-get install -y --force-yes php5 apache2 libapache2-mod-php5 php3-sqlite
-sudo apt-get install -y --force-yes php5-gd php5-mcrypt php5-mysql php5-curl
+sudo apt-get install -y --force-yes apache2
+sudo apt-get install -y --force-yes php5
+sudo apt-get install -y --force-yes libapache2-mod-php5
+sudo apt-get install -y --force-yes php5-sqlite
+sudo apt-get install -y --force-yes php5-gd php5-mcrypt php5-mysql php5-curl php5-memcache
 
 echo "--- Installing and configuring Xdebug ---"
 sudo apt-get install -y --force-yes php5-xdebug
@@ -26,7 +29,7 @@ sudo a2enmod rewrite
 
 echo "--- Setting document root ---"
 sudo rm -rf /var/www/html
-sudo ln -fs /vagrant/app /var/www/html
+sudo ln -fs /vagrant/app/vnnwordpress /var/www/html
 
 echo "--- Setting dev-level error reporting ---"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini

@@ -36,4 +36,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # config.vm.synced_folder "../data", "/vagrant_data"
     config.vm.synced_folder "./app", "/var/www/app", :mount_options => ["dmode=777", "fmode=666"]
 
+    #specify your RAM
+    config.vm.provider "virtualbox" do |v|
+        v.memory = 2048
+    end
+
 end
