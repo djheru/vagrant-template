@@ -4,6 +4,7 @@ echo "--- Installing Apache and PHP ---"
 sudo apt-get install -y --force-yes apache2
 sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
+
 sudo apt-get install -y --force-yes php5
 sudo apt-get install -y --force-yes libapache2-mod-php5
 sudo apt-get install -y --force-yes php5-sqlite php5-memcached
@@ -29,7 +30,7 @@ sudo a2enmod rewrite
 
 echo "--- Setting document root ---"
 sudo rm -rf /var/www/html
-sudo ln -fs /vagrant/app /var/www/html
+sudo ln -fs /vagrant/app/vnnwordpress /var/www/html
 
 echo "--- Setting dev-level error reporting ---"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
