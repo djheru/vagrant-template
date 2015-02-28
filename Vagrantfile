@@ -25,6 +25,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #config.vm.provision :shell, :path => "provision/node.sh"
     config.vm.provision :shell, inline: "sudo chown -R vagrant /home/vagrant"
 
+    #copy bash aliases
+    config.vm.provision "file", source: "~/.bash_aliases", destination: ".bash_aliases"
+
     # If true, then any SSH connections made will enable agent forwarding.
     # Default value: false
     # config.ssh.forward_agent = true
