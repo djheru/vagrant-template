@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
 echo "--- Installing Apache and PHP ---"
+sudo apt-get install -y --force-yes apache2
 sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
-sudo apt-get install -y --force-yes php5 apache2 libapache2-mod-php5 php3-sqlite
+sudo apt-get install -y --force-yes php5
+sudo apt-get install -y --force-yes libapache2-mod-php5
+sudo apt-get install -y --force-yes php5-sqlite php5-memcached
 sudo apt-get install -y --force-yes php5-gd php5-mcrypt php5-mysql php5-curl
 
 echo "--- Installing and configuring Xdebug ---"

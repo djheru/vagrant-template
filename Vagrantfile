@@ -34,6 +34,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # the path on the guest to mount the folder. And the optional third
     # argument is a set of non-required options.
     # config.vm.synced_folder "../data", "/vagrant_data"
-    config.vm.synced_folder "./app", "/var/www/app", :mount_options => ["dmode=777", "fmode=666"]
+    config.vm.synced_folder "./app", "/var/www/app", :mount_options => ["dmode=777", "fmode=777"]
+
+    #memory settings for vm
+    config.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+    end
 
 end
