@@ -13,7 +13,9 @@ sudo apt-get install -y --force-yes g++ make build-essential libexpat1-dev libic
 
 echo "--- Installing git ---"
 sudo apt-get install -y --force-yes git
-git config --global user.email "djheru@gmail.com" && git config --global user.name "Philip Damra"
+git config --global user.email "djheru@gmail.com"
+git config --global user.name "Philip Damra"
+git config --global core.filemode false
 
 echo "--- Updating packages list ---"
 sudo apt-get update
@@ -35,7 +37,3 @@ echo "deb http://www.rabbitmq.com/debian/ testing main" | sudo tee -a /etc/apt/s
 curl -L -o ~/rabbitmq-signing-key-public.asc http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 sudo apt-key add ~/rabbitmq-signing-key-public.asc
 sudo apt-get update && sudo apt-get install -y --force-yes rabbitmq-server erlang-nox
-
-echo "-- Installing SQLite --"
-sudo apt-get install -y --force-yes sqlite3 libsqlite3-dev
-sudo apt-get -f install

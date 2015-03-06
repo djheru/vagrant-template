@@ -13,11 +13,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     #forward ports to host
     config.vm.network :forwarded_port, guest: 80, host: 8080
-	config.vm.network :forwarded_port, guest: 3000, host: 3000
-	config.vm.network :forwarded_port, guest: 3001, host: 3001
-	config.vm.network :forwarded_port, guest: 9000, host: 9000
+    config.vm.network :forwarded_port, guest: 3000, host: 3000
+    config.vm.network :forwarded_port, guest: 3001, host: 3001
+    config.vm.network :forwarded_port, guest: 9000, host: 9000
 
-	#apt-get ALL the things
+    #apt-get ALL the things
     config.vm.provision :shell, :path => "provision/base.sh"
     config.vm.provision :shell, :path => "provision/lamp.sh"
     #config.vm.provision :shell, :path => "provision/python.sh"
@@ -37,16 +37,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # the path on the guest to mount the folder. And the optional third
     # argument is a set of non-required options.
     # config.vm.synced_folder "../data", "/vagrant_data"
-    config.vm.synced_folder "./app", "/var/www/app", :mount_options => ["dmode=777", "fmode=777"]
+    config.vm.synced_folder "./app", "/vagrant/app",
+        :mount_options => ["dmode=777", "fmode=777"],
+        :owner => "www-data",
+        :group => "www-data"
 
     #memory settings for vm
     config.vm.provider "virtualbox" do |v|
       v.memory = 2048
-    end
-
-    #specify your RAM
-    config.vm.provider "virtualbox" do |v|
-        v.memory = 2048
     end
 
 end
