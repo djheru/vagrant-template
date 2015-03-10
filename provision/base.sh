@@ -37,3 +37,10 @@ echo "deb http://www.rabbitmq.com/debian/ testing main" | sudo tee -a /etc/apt/s
 curl -L -o ~/rabbitmq-signing-key-public.asc http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 sudo apt-key add ~/rabbitmq-signing-key-public.asc
 sudo apt-get update && sudo apt-get install -y --force-yes rabbitmq-server erlang-nox
+
+echo "--- Installing Mongodb ---"
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 > /dev/null
+sudo sh -c 'echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" | sudo tee /etc/apt/sources.list.d/mongodb.list' > /dev/null
+sudo apt-get update
+sudo apt-get install -y --force-yes mongodb-org
+
