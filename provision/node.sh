@@ -12,6 +12,8 @@ nvm use default
 echo "-- Installing some useful global packages --"
 npm install -g express-generator
 npm install -g nodemon
-npm install -g grunt-cli
+npm install -g gulp
+npm install -g karma
+npm install -g yo
 npm install -g mocha
 npm install -g bower

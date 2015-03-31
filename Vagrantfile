@@ -19,7 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     #apt-get ALL the things
     config.vm.provision :shell, :path => "provision/base.sh"
-    config.vm.provision :shell, :path => "provision/lamp.sh"
+    #Choose only lamp or lemp, not both
+    config.vm.provision :shell, :path => "provision/lemp.sh"
+    #config.vm.provision :shell, :path => "provision/lamp.sh"
     #config.vm.provision :shell, :path => "provision/python.sh"
     #config.vm.provision :shell, :path => "provision/ruby.sh"
     #config.vm.provision :shell, :path => "provision/node.sh"
