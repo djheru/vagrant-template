@@ -5,8 +5,15 @@ echo "--- Installing PHP-specific packages and Curl ---"
 
 echo "--- We want the bleeding edge of PHP, right master? ---"
 sudo add-apt-repository -y --force-yes ppa:ondrej/php5
-sudo apt-get install -y --force-yes php5-fpm php5-cli php5-mcrypt php5-curl curl php5-gd
+sudo apt-get install -y --force-yes php5-fpm php5-cli
 sudo apt-get install -y --force-yes php5-xdebug
+sudo apt-get install -y --force-yes php5-sqlite
+sudo apt-get install -y --force-yes php5-memcached
+sudo apt-get install -y --force-yes php-memcache
+sudo apt-get install -y --force-yes php5-gd
+sudo apt-get install -y --force-yes php5-mcrypt
+sudo apt-get install -y --force-yes php5-mysql
+sudo apt-get install -y --force-yes php5-curl
 
 echo "--- Applying modifications to php5-fpm ---"
 sed -i '/cgi.fix_pathinfo=1/c cgi.fix_pathinfo=0' /etc/php5/fpm/php.ini
@@ -34,10 +41,10 @@ server {
     listen   80; ## listen for ipv4; this line is default and implied
 	listen   [::]:80; ## listen for ipv6
 
-    root /www/mywebsite/public/;
+    root /vagrant/app/;
     index index.php;
 
-    server_name mywebsite.dev www.mywebsite.dev;
+    server_name vagrant.dev;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
