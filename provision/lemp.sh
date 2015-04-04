@@ -9,10 +9,10 @@ sudo apt-get install -y --force-yes php5-fpm php5-cli
 sudo apt-get install -y --force-yes php5-xdebug
 sudo apt-get install -y --force-yes php5-sqlite
 sudo apt-get install -y --force-yes php5-memcached
-sudo apt-get install -y --force-yes php-memcache
+sudo apt-get install -y --force-yes php5-memcache
 sudo apt-get install -y --force-yes php5-gd
 sudo apt-get install -y --force-yes php5-mcrypt
-sudo apt-get install -y --force-yes php5-mysql
+sudo apt-get install -y --force-yes pdo-mysql
 sudo apt-get install -y --force-yes php5-curl
 
 echo "--- Applying modifications to php5-fpm ---"
