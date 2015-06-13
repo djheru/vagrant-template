@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #step 2, you put your dist in the box
-    config.vm.box = "ubuntu/trusty32"
+    config.vm.box = "ubuntu/trusty64"
 
     # Create a private network, which allows host-only access to the machine using a specific IP.
     config.vm.network :private_network, ip: "192.168.56.2"
@@ -46,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     #memory settings for vm
     config.vm.provider "virtualbox" do |v|
-      v.memory = 2048
+      v.memory = 4096
     end
 
 end
