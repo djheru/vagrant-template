@@ -13,11 +13,14 @@ echo "-- Installing some useful global packages --"
 npm install -g express-generator
 npm install -g nodemon
 npm install -g gulp
-npm install -g grunt
 npm install -g karma
 npm install -g yo
-npm install -g mocha
 npm install -g bower
+npm install -g jasmine
 npm install -g generator-karma
 npm install -g generator-angular
 npm install -g generator-angular-fullstack
+npm install -g phantomjs
+npm install -g pm2
+npm install -g strongloop
+

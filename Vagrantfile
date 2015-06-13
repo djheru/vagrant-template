@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #config.vm.provision :shell, :path => "provision/lamp.sh"
     #config.vm.provision :shell, :path => "provision/python.sh"
     #config.vm.provision :shell, :path => "provision/ruby.sh"
-    #config.vm.provision :shell, :path => "provision/node.sh"
+    config.vm.provision :shell, :path => "provision/node.sh"
     config.vm.provision :shell, inline: "sudo chown -R vagrant /home/vagrant"
 
     #copy bash aliases
