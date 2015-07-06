@@ -5,8 +5,8 @@ sudo apt-get update
 sudo su vagrant -c "wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh"
 source /home/vagrant/.nvm/nvm.sh
 source /home/vagrant/.bashrc
-nvm install 0.10
-nvm alias default 0.10
+nvm install 0.11
+nvm alias default 0.11
 nvm use default
 
 echo "-- Installing some useful global packages --"
